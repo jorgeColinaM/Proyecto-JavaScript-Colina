@@ -67,7 +67,7 @@
                 </div>
                 
                 <div class="count-products">
-                  <span class="contador-productos">0</span>
+                  <span class="contador-productos" id="contador-productos">0</span>
                 </div>
 
               
@@ -352,6 +352,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartList = document.getElementById("cart-list");
   const cartTotal = document.getElementById("cart-total");
   const resetButton = document.getElementById("reset-cart");
+  const contadorProductos = document.getElementById("contador-productos");
 
   let cartItems = [];
 
@@ -365,6 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
       total += item.price * item.quantity;
     }
     cartTotal.textContent = `$${total.toFixed(2)}`;
+    contadorProductos.textContent = cartItems.length.toString();
   }
 
   function addToCart(product) {
