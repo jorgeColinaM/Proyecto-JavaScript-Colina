@@ -1,13 +1,402 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Calcu | LATE</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, " >
+    <meta name="keywords" content="Café, Cafetería, Bebidas de café, Desayuno, Almuerzo, Postres, Barista, Espresso, Capuchino, Latte, Café americano, Té, Bebidas calientes, Bebidas frías, Repostería, Panadería, Ambiente acogedor, Terraza, Wifi gratuito, Eventos especiales, Menú variado, Ingredientes frescos, Café de origen, Café de especialidad">
+    <meta name="description" content="Descubre el lugar perfecto para disfrutar de un delicioso café y momentos inolvidables. Nuestra cafetería te ofrece una experiencia única, donde podrás saborear una amplia variedad de bebidas y deleitarte con exquisitos postres. Sumérgete en un ambiente acogedor y relajado, ideal para relajarte o compartir con amigos. ¡Ven y déjate cautivar por los aromas y sabores de nuestra cafetería!">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilo.css">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./img/logos/favicon.icon.ico">
+    <script src="main.js"></script>
+    <title>CafecitoBreak| Inicio</title>
 </head>
-<body>
-    <h1>Mi algorítmo</h1>
-    <script src="./main.js"></script>
+
+  <body>
+   
+     <a href="https://api.whatsapp.com/send?phone=+59897683127&text=%C2%A1Bienvenidos,%20contactenme!" class="float" target="_blank">
+      <i class="fa fa-whatsapp my-float"></i>
+     </a>
+
+    <header>
+
+      <div class="fondo-menu-desplegable" id="fondo-menu-desplegable"></div>
+      
+      <nav class="navbar navbar-expand-lg">
+        
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand"><img class="img-Logo" src="./img/logos/Logo fondo negro.png" alt="Logo de CafecitoBreak"></a>
+
+            <img class="boton-menu-abrir" id="boton-menu-abrir" src="./img/Menu hamburguesa/MENU_HAMBURGUESA_ABIERTO.png" alt="Menu hamburguesa abierto">
+            <img class="boton-menu-cerrar" id="boton-menu-cerrar" src="./img/Menu hamburguesa/MENU_HAMBURGUESA_ABIERTO.png" alt="Menu hamburguesa cerrado">
+
+          <ul class="nav" id="nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/sobre nosotros.html">Sobre nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./pages/ubicacion.html">Ubicación</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/contacto.html">Contacto</a>
+              </li>
+              
+              <div class="container-cart-icon">
+                
+                <button class="boton-menu-carrito" id="boton-menu-carrito"><img class="icon-cart" src="./img/CARRITO_COMPRAS.png"></img>
+                </button>
+
+                  <div class="shop-col-c">
+                    <div id="cart-container">
+                      
+                      <h2>Productos</h2>
+                      <ul id="cart-list"></ul>
+                      <p>Total: <span id="cart-total">$0</span></p>
+                      <button id="reset-cart">Vaciar Carrito</button>
+                    
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="count-products">
+                  <span class="contador-productos">0</span>
+                </div>
+
+              
+          </ul>
+          
+        </div>
+      </nav>
+    </header>
+  
+  
+  <main>
+        <div class="cover d-flex justify-content-center align-items-center text-align-center flex-column">
+            <h1>
+                CafecitoBreak
+            </h1>
+            <p>El mejor café, para todos los gustos.</p>
+
+            <a href="https://www.ico.org/ES/coffee_storyc.asp" target="_blank">
+              <button class="btn btn-dark"> 
+               CONOCE MÁS 
+              </button>
+            </a>
+
+        </div>
+    
+    <!-- here the label blog begin -->
+    <section>
+      <div class="row justify-content-center">
+        <div class="blog">
+          <h1><strong>Blog</strong></h1>
+        </div>
+      </div>
+    </section> 
+
+    <!-- here the cards begin -->
+ 
+  <div class="carta-container">
+    <div class="carta">
+      <img src="https://media.istockphoto.com/id/1373430257/es/foto/granos-de-caf%C3%A9-que-se-enfr%C3%ADan-despu%C3%A9s-de-ser-tostados-desde-una-m%C3%A1quina-tostadora-de-caf%C3%A9.jpg?b=1&s=170667a&w=0&k=20&c=FsPwZZhMcGW-roPcNI8hs-qL2pHAq1GPxrWU0HHY0nE=" alt="Imagen 1" />
+      <h5 class="card-title">Cultivo ecológico calificado</h5>
+      <p class="card-text">Trabajamos de la mano de equipos de alta calidad para garantizar un cultivo ideal.</p>
+    </div>
+  
+    <div class="carta">
+      <img src="https://media.istockphoto.com/id/1326419180/es/foto/hermosa-mujer-relajante-y-bebiendo-t%C3%A9-caliente.jpg?b=1&s=170667a&w=0&k=20&c=NGqLW869WRVIO6VKeH1tNfr4At0LabdEBJX2oDP13GY=" alt="Imagen 2" />
+      <h5 class="card-title">Más café, menos dificultades</h5>
+      <p class="card-text">En CafecitoBreak te lo facilitamos, llevamos tu café a la puerta de tu casa, solo llama.</p>
+    </div>
+  
+    <div class="carta">
+      <img src="./img/tarjetas/taza cafe.jpg" alt="Imagen 3" />
+      <h5 class="card-title">Pasion imparable por el café</h5>
+      <p class="card-text">Lo hacemos con todo el corazón para ofrecerte un break con sabor a gloria, te esperamos.</p>
+    </div>
+  </div>
+
+    <!-- here the shop begin -->
+    <div class="row justify-content-center">
+     <div class="tienda">
+      <h1><strong>Tienda</strong></h1>
+     </div>
+    </div> 
+    <section class="shop-section">
+      <div class="container-fluid cont-shop">
+        <div class="row row-cont justify-content-between">
+        
+          <div class="col-12 shop-col">
+
+            <div class="container-fluid cont-products">
+              <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/capuccino.png" class="card-img-top" id="card-img-shop" alt="cafe capuccino">
+                     <div class="card-body">
+                      <p class="card-title">Capuccino <span class="badge badge-info">2 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/espresso.png" class="card-img-top" id="card-img-shop" alt="espresso">
+                     <div class="card-body">
+                      <p class="card-title">Espresso <span class="badge badge-info">1,5 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/waffles.png" class="card-img-top" id="card-img-shop" alt="waffles">
+                     <div class="card-body">
+                      <p class="card-title">Waffles <span class="badge badge-info">5 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/latte.png" class="card-img-top" id="card-img-shop" alt="Latte">
+                     <div class="card-body">
+                      <p class="card-title">Latte <span class="badge badge-info">2 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/medialuna.png" class="card-img-top" id="card-img-shop" alt="medialuna">
+                     <div class="card-body">
+                      <p class="card-title">Medialuna <span class="badge badge-info">4 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/tiramisu.png" class="card-img-top" id="card-img-shop" alt="Tiramisu">
+                     <div class="card-body">
+                      <p class="card-title">Tiramisu <span class="badge badge-info">6 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/capuccino frio.png" class="card-img-top" id="card-img-shop" alt="capuccino frio">
+                     <div class="card-body">
+                      <p class="card-title">Capuccino frío<span class="badge badge-info">2 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/carrot.png" class="card-img-top" id="card-img-shop" alt="Carrot cake">
+                     <div class="card-body">
+                      <p class="card-title">Carrot cake<span class="badge badge-info">2 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/choco classic.png" class="card-img-top" id="card-img-shop" alt="torta de chocolate">
+                     <div class="card-body">
+                      <p class="card-title">Torta de Chocolate <span class="badge badge-info">5 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/chocomani.png" class="card-img-top" id="card-img-shop" alt="Torta de chocolate con maní">
+                     <div class="card-body">
+                      <p class="card-title">Torta de chocomaní <span class="badge badge-info">6 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/croissant.png" class="card-img-top" id="card-img-shop" alt="croissant">
+                     <div class="card-body">
+                      <p class="card-title">Croissant<span class="badge badge-info">2,5 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/frutal brownie.png" class="card-img-top" id="card-img-shop" alt="Brownie con frutas">
+                     <div class="card-body">
+                      <p class="card-title">Brownie con fresas<span class="badge badge-info">4 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/sweet pancakes.png" class="card-img-top" id="card-img-shop" alt="pancakes dulces">
+                      <div class="card-body">
+                      <p class="card-title">Pancakes canela y banana<span class="badge badge-info">3 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/Sweet choco.png" class="card-img-top" id="card-img-shop" alt="Chocolate caliente">
+                     <div class="card-body">
+                      <p class="card-title">Chocolate caliente<span class="badge badge-info">2,5 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/sinfonia.png" class="card-img-top" id="card-img-shop" alt="sinfonia">
+                     <div class="card-body">
+                      <p class="card-title">Sinfonia<span class="badge badge-info">5 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card">
+                    <img src="./img/productos/pancakes del bosque.png" class="card-img-top" id="card-img-shop" alt="pancakes con frutos del bosque">
+                     <div class="card-body">
+                      <p class="card-title">Pancakes con frutos<span class="badge badge-info">4 USD</span></p>
+                      <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
+              </div>
+            </div>
+            
+
+          </section>
+  </main>
+
+<!-- here the footer begin -->
+<footer class="footer">
+  <div class="group-1">
+   <div class="box-1">
+     <figure>
+       <a href="#">
+         <img src="./img/logos/Logo fondo negro.png" alt="Logo de CafecitoBreak">
+       </a>
+     </figure>
+   </div>
+   <div class="box-2">
+     <h2>TE ESPERAMOS</h2>
+     <p>“CafecitoBreak: ¡Un break con sabor a café!”</p>
+     <p>Montevideo, Uruguay. Emilio Raña 2517.</p>
+   </div>
+   <div class="box-3">
+     <h2>SIGUENOS</h2>
+     <div class="red-Social">
+       <a target="_blank" href="https://www.facebook.com/jorge.colinamachado?mibextid=ZbWKwL" class="facebook"><img src="./img/logos/face.jpg" class="fa fa-facebook"></img></a>
+       <a target="_blank" href="https://instagram.com/iamjorgec_?igshid=ZGUzMzM3NWJiOQ==" class="instagram"><img src="./img/logos/insta.jpg" class="fa fa-instagram"></img></a>
+       <a target="_blank" href="https://twitter.com/UnJorgeCurioso_" class="twitter"><img src="./img/logos/twitter.jpg" class="fa fa-twitter"></img></a>
+     </div>
+   </div>
+  </div>  
+   <div class="group-2">
+     <small>&copy; 2023 <b>CafecitoBreak</b> -  Todos los Derechos Reservados.</small>
+   </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const products = [
+    { name: "Capuccino", price: 2 },
+    { name: "Espresso", price: 1.5 },
+    { name: "Waffles", price: 5 },
+    { name: "Latte", price: 2 },
+    { name: "Medialuna", price: 4 },
+    { name: "Tiramisu", price: 6 },
+    { name: "Capuccino frío", price: 2 },
+    { name: "Carrot cake", price: 2 },
+    { name: "Torta de Chocolate", price: 5 },
+    { name: "Torta de chocomaní", price: 6 },
+    { name: "Croissant", price: 2.5 },
+    { name: "Brownie con fresas", price: 4 },
+    { name: "Pancakes canela y banana", price: 3 },
+    { name: "Chocolate caliente", price: 2.5 },
+    { name: "Sinfonia", price: 5 },
+    { name: "Pancakes con frutos", price: 4 },
+    // aquí puedo agregar más productos...
+];
+
+  const cartList = document.getElementById("cart-list");
+  const cartTotal = document.getElementById("cart-total");
+  const resetButton = document.getElementById("reset-cart");
+
+  let cartItems = [];
+
+  function updateCart() {
+    cartList.innerHTML = "";
+    let total = 0;
+    for (const item of cartItems) {
+      const li = document.createElement("li");
+      li.textContent = `${item.quantity}x ${item.name} - $${(item.price * item.quantity).toFixed(2)}`;
+      cartList.appendChild(li);
+      total += item.price * item.quantity;
+    }
+    cartTotal.textContent = `$${total.toFixed(2)}`;
+  }
+
+  function addToCart(product) {
+    const existingItem = cartItems.find((item) => item.name === product.name);
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cartItems.push({ ...product, quantity: 1 });
+    }
+    updateCart();
+  }
+
+  function resetCart() {
+    cartItems = [];
+    updateCart();
+  }
+
+  const addButtons = document.querySelectorAll(".add-to-cart");
+  addButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      addToCart(products[index]);
+    });
+  });
+
+  resetButton.addEventListener("click", () => {
+    resetCart();
+  });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./main.js"></script>
+
 </body>
 </html>

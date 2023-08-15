@@ -1,0 +1,81 @@
+body{
+    .float{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#25d366;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        font-size:30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index:100;
+
+        .my-float{
+            margin-top:16px;
+        }
+
+
+    }
+    .float:hover {
+        text-decoration: none;
+        color: #25d366;
+      background-color:#fff;
+    }  
+}
+main{
+
+    .cover{
+        height: 400px;
+        background-image: url(https://images.unsplash.com/photo-1522725843938-035891590561?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y29mZmVlJTIwYW5kJTIwZ2FyZGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+        color: white;
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(0,0,0,0.5);
+        background-blend-mode: darken;
+
+        h1{
+            text-align: center;
+        }
+        .btn {
+            font-size: 16px;
+            color: white;
+            border: 0;
+            border-radius: 25px;
+            background-color: #0a1a2a;
+            box-shadow: #0a1a2a;
+            cursor: pointer;
+        }    
+        .btn:hover {
+            background-color: #0a1a2a;
+        }
+
+    }
+    .blog{
+        padding: 2rem;
+        margin: 4rem;
+        background-position: center;
+
+        h1{
+            text-align: center;
+        }
+    }
+    .mapa-web{
+        display:block;
+        text-align: center;
+        margin-bottom: 150px;
+
+        h4{
+            margin-bottom: 50px;
+            justify-content: center;
+            color: #0d2033;
+        }
+        .mapa-web-google{
+            max-width: 100%;
+            height: auto;
+        }
+    
+    }
+}

@@ -1,78 +1,80 @@
-function calcularPorcentajes(gasto, ingreso) {
-  // Calculo del porcentaje de gastos
-  const porcentajeGastos = (gasto / ingreso) * 100;
+HamburguerMenuAddEventListeners();
+CartMenuAddEventListeners();
 
-  // Calculo del porcentaje de ingresos (siempre será 100%)
-  const porcentajeIngresos = 100;
 
-  // Calculo del porcentaje de ahorro
-  const porcentajeAhorro = 100 - porcentajeGastos;
+// MENÚ HAMBURGUESA
 
-  // Calculo del monto ahorrado
-  const montoAhorrado = ingreso - gasto;
-
-  // Retornar los resultados como un objeto
-  return {
-    porcentajeGastos,
-    porcentajeIngresos,
-    porcentajeAhorro,
-    montoAhorrado,
-  };
-}
-
-let mensajeEntrada = window.confirm("¿Qué tal? Tenemos preparado un sistema para calcular tus porcentajes de ingresos, ahorros y gastos. ¿Te interesa? acepta para continuar");
-if (mensajeEntrada)
-{
-    let namePerson = prompt("Ingresa tu nombre");
-    let surnamePerson = prompt("Ingresa tu apellido");
-    let edadPerson = prompt("Nos gustaría saber cuál es tu edad, ingresala")
-
-    let nombreCompleto = namePerson + " " + surnamePerson;
-
-        if (edadPerson >= 18)
-        {
-
-        alert(`Hola ${nombreCompleto}, bienvenido!`);
+function HamburguerMenuAddEventListeners() {
+    var botonMenuAbrir = document.getElementById("boton-menu-abrir");
+    var botonMenuCerrar = document.getElementById("boton-menu-cerrar");
+    var menu = document.getElementById("nav");
+    var fondomenu = document.getElementById("fondo-menu-desplegable");
     
-        alert ("Queremos ayudarte a calcular los porcentajes de tus gastos, ingresos y ahorro. Para ello, avanza y te solicitaremos algunos datos") 
-        
-        let gasto = parseInt(prompt("Ingresa tu monto mensual de gasto neto, sin puntos ni comas. Ej: 25000"));
-        let ingreso = parseInt(prompt("Ingresa tu monto mensual de ingreso neto, sin puntos ni comas. Ej: 25000"));
+    botonMenuAbrir.addEventListener("click", function () {
+      menu.classList.add("abierto");
+      fondomenu.classList.add("abierto");
+      botonMenuAbrir.style.display = "none";
+      botonMenuCerrar.style.display = "flex";
+    });
 
-        let porcentajes = calcularPorcentajes(gasto, ingreso)
+    botonMenuCerrar.addEventListener("click", function () {
+      menu.classList.remove("abierto");
+      fondomenu.classList.remove("abierto");
+      botonMenuCerrar.style.display = "none";
+      botonMenuAbrir.style.display = "block";
+    });
 
-        alert(`Tus porcentajes son: \n\n Porcentaje de gastos: ${porcentajes.porcentajeGastos}% \n\n Porcentaje de ingresos: ${porcentajes.porcentajeIngresos}% \n\n Porcentaje de ahorro: ${porcentajes.porcentajeAhorro}% \n\n Monto disponible para ahorro: ${porcentajes.montoAhorrado}`);
-        
-        let aceptar = window.confirm("Para calcular nuevamente los porcentajes: ACEPTAR \n\n Para terminar y salir: CANCELAR")
-        
-          while(aceptar){
+  }
+  
+  // Esperar a que los elementos existan en el DOM para añadir los eventos
+  window.addEventListener("load", function() {
+    addEventListeners();
+  });
 
-            let gasto = parseInt(prompt("Ingresa tu monto mensual de gasto neto, sin puntos ni comas. Ej: 25000"));
-            let ingreso = parseInt(prompt("Ingresa tu monto mensual de ingreso neto, sin puntos ni comas. Ej: 25000"));
+// TERMINA MENÚ HAMBURGUESA
 
-            let porcentajes = calcularPorcentajes(gasto, ingreso)
+// FORMULARIO DE CONTACTO
 
-            alert(`Tus porcentajes son: \n\n Porcentaje de gastos: ${porcentajes.porcentajeGastos}% \n\n Porcentaje de ingresos: ${porcentajes.porcentajeIngresos}% \n\n Porcentaje de ahorro: ${porcentajes.porcentajeAhorro}% \n\n Monto disponible para ahorro: ${porcentajes.montoAhorrado}`);
-        
-            let aceptar = window.confirm("Para calcular nuevamente los porcentajes: ACEPTAR \n\n Para terminar y salir: CANCELAR")
-        
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-          }
-          window.close();
-        } 
-        else (edadPerson < 18)
-        {
+    // Enviar el formulario aquí (puede ser mediante AJAX o cualquier método que prefieras)
+    // Mostrar el mensaje de éxito
+    document.getElementById('success-msg').style.display = 'block';
+    document.getElementById('success-msg').textContent = 'Enviado!';
+  });
 
-        alert(`Hola ${datos}, lo sentimos, pero no tienes la edad suficiente para ingresar`);
-        
-        } 
+// TERMINA FORMULARIO DE CONTACTO
+ 
+// EMPIEZA FUNCION PARA CARRITO DE COMPRAS, VENTANA FLOTANTE CON CARRITO Y PRODUCTOS
 
+
+function CartMenuAddEventListeners() {
+  var botonMenuCarritoAbrir = document.getElementById("boton-menu-carrito");
+  var cartContent = document.getElementById("cart-container");
+
+  botonMenuCarritoAbrir.addEventListener("click", function () {
+    // Cambiar la visibilidad del contenido del carrito
+    if (cartContent.style.display === "none" || cartContent.style.display === "") {
+      cartContent.style.display = "block";
+    } else {
+      cartContent.style.display = "none";
+    }
+
+    // Cambiar la visibilidad del botón "Vaciar Carrito"
+    var resetCartButton = document.getElementById("reset-cart");
+    if (resetCartButton.style.display === "none" || resetCartButton.style.display === "") {
+      resetCartButton.style.display = "block";
+    } else {
+      resetCartButton.style.display = "none";
+    }
+  });
 }
-else
-{
 
-    alert("Hasta luego, podrás volver cuando quieras!")
+// Esperar a que los elementos existan en el DOM para añadir los eventos
+window.addEventListener("load", function() {
+  addEventListeners();
+});
 
-    window.close();
+// Codigo de arrays de productos para sumar al carrito 
 
-}
