@@ -1,6 +1,6 @@
 HamburguerMenuAddEventListeners();
 CartMenuAddEventListeners();
-
+AddProductAddEventListeners();
 
 // MENÚ HAMBURGUESA
 
@@ -25,26 +25,10 @@ function HamburguerMenuAddEventListeners() {
     });
 
   }
-  
-  // Esperar a que los elementos existan en el DOM para añadir los eventos
-  window.addEventListener("load", function() {
-    addEventListeners();
-  });
 
 // TERMINA MENÚ HAMBURGUESA
 
-// FORMULARIO DE CONTACTO
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    // Enviar el formulario aquí (puede ser mediante AJAX o cualquier método que prefieras)
-    // Mostrar el mensaje de éxito
-    document.getElementById('success-msg').style.display = 'block';
-    document.getElementById('success-msg').textContent = 'Enviado!';
-  });
-
-// TERMINA FORMULARIO DE CONTACTO
  
 // EMPIEZA FUNCION PARA CARRITO DE COMPRAS, VENTANA FLOTANTE CON CARRITO Y PRODUCTOS
 
@@ -71,10 +55,75 @@ function CartMenuAddEventListeners() {
   });
 }
 
-// Esperar a que los elementos existan en el DOM para añadir los eventos
-window.addEventListener("load", function() {
-  addEventListeners();
+// EMPIEZA CODIGO PARA FUNCIONALIDAD BOTONES DE AGREGAR PRODUCTOS Y CARRITO
+
+function AddProductAddEventListeners() {
+
+document.addEventListener("DOMContentLoaded", function () {
+  const products = [
+    { name: "Capuccino", price: 2 },
+    { name: "Espresso", price: 1.5 },
+    { name: "Waffles", price: 5 },
+    { name: "Latte", price: 2 },
+    { name: "Medialuna", price: 4 },
+    { name: "Tiramisu", price: 6 },
+    { name: "Capuccino frío", price: 2 },
+    { name: "Carrot cake", price: 2 },
+    { name: "Torta de Chocolate", price: 5 },
+    { name: "Torta de chocomaní", price: 6 },
+    { name: "Croissant", price: 2.5 },
+    { name: "Brownie con fresas", price: 4 },
+    { name: "Pancakes canela y banana", price: 3 },
+    { name: "Chocolate caliente", price: 2.5 },
+    { name: "Sinfonia", price: 5 },
+    { name: "Pancakes con frutos", price: 4 },
+    // aquí puedo agregar más productos...
+];
+
+  const cartList = document.getElementById("cart-list");
+  const cartTotal = document.getElementById("cart-total");
+  const resetButton = document.getElementById("reset-cart");
+  const contadorProductos = document.getElementById("contador-productos");
+
+  let cartItems = [];
+
+  function updateCart() {
+    cartList.innerHTML = "";
+    let total = 0;
+    for (const item of cartItems) {
+      const li = document.createElement("li");
+      li.textContent = `${item.quantity}x ${item.name} - $${(item.price * item.quantity).toFixed(2)}`;
+      cartList.appendChild(li);
+      total += item.price * item.quantity;
+    }
+    cartTotal.textContent = `$${total.toFixed(2)}`;
+    contadorProductos.textContent = cartItems.length.toString();
+  }
+
+  function addToCart(product) {
+    const existingItem = cartItems.find((item) => item.name === product.name);
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cartItems.push({ ...product, quantity: 1 });
+    }
+    updateCart();
+  }
+
+  function resetCart() {
+    cartItems = [];
+    updateCart();
+  }
+
+  const addButtons = document.querySelectorAll(".add-to-cart");
+  addButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      addToCart(products[index]);
+    });
+  });
+
+  resetButton.addEventListener("click", () => {
+    resetCart();
+  });
 });
-
-// Codigo de arrays de productos para sumar al carrito 
-
+}
