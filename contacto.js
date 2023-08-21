@@ -1,8 +1,9 @@
 
-
+FormContactAddEventListener();
 
 
 // FORMULARIO DE CONTACTO
+function FormContactAddEventListener(){
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -12,5 +13,5 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     document.getElementById('success-msg').style.display = 'block';
     document.getElementById('success-msg').textContent = 'Enviado!';
   });
-
+}
 // TERMINA FORMULARIO DE CONTACTO
