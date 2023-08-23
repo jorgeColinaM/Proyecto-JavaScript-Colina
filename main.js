@@ -85,7 +85,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const resetButton = document.getElementById("reset-cart");
   const contadorProductos = document.getElementById("contador-productos");
 
-  let cartItems = [];
+  let cartItems;
+
+  function initializeCart() {
+    
+  if(localStorage.getItem("carrito") != null){
+    cartItems = JSON.parse(localStorage.getItem("carrito"));
+  }else{
+    cartItems = [];
+  }
+  updateCart()
+  }
+  initializeCart();
 
   function updateCart() {
     cartList.innerHTML = "";
@@ -107,11 +118,13 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       cartItems.push({ ...product, quantity: 1 });
     }
+    localStorage.setItem("carrito", JSON.stringify(cartItems));
     updateCart();
   }
 
   function resetCart() {
     cartItems = [];
+    localStorage.setItem("carrito", cartItems);
     updateCart();
   }
 
