@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta name="keywords" content="Café, Cafetería, Bebidas de café, Desayuno, Almuerzo, Postres, Barista, Espresso, Capuchino, Latte, Café americano, Té, Bebidas calientes, Bebidas frías, Repostería, Panadería, Ambiente acogedor, Terraza, Wifi gratuito, Eventos especiales, Menú variado, Ingredientes frescos, Café de origen, Café de especialidad">
+        <meta name="description" content="Descubre el lugar perfecto para disfrutar de un delicioso café y momentos inolvidables. Nuestra cafetería te ofrece una experiencia única, donde podrás saborear una amplia variedad de bebidas y deleitarte con exquisitos postres. Sumérgete en un ambiente acogedor y relajado, ideal para relajarte o compartir con amigos. ¡Ven y déjate cautivar por los aromas y sabores de nuestra cafetería!">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/estilo.css">
+        <link rel="shortcut icon" href="../img/logos/favicon.icon.ico">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <title>CafecitoBreak| Ingreso y Registro</title>
+    </head>
+<body id="bg-login-register">
+
+    <header>
+
+        <div class="fondo-menu-desplegable" id="fondo-menu-desplegable"></div>
+        
+        <nav class="navbar navbar-expand-lg">
+          
+            <div class="container-fluid justify-content-between">
+              <a class="navbar-brand"><img class="img-Logo" src="../img/logos/Logo fondo negro.png" alt="Logo de CafecitoBreak"></a>
+    
+             <img class="boton-menu-abrir" id="boton-menu-abrir" src="../img/Menu hamburguesa/MENU_HAMBURGUESA_ABIERTO.png" alt="Menu hamburguesa abierto">
+             <img class="boton-menu-cerrar" id="boton-menu-cerrar" src="../img/Menu hamburguesa/MENU_HAMBURGUESA_ABIERTO.png" alt="Menu hamburguesa cerrado">
+    
+              <ul class="nav" id="nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./servicios.html">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./sobre nosotros.html">Sobre nosotros</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="./ubicacion.html">Ubicación</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contacto.html">Contacto</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+      </header>
+
+        <main id="main-login-register">
+
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesión para ingresar en la página</p>
+                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <h3>¿Aún no tienes una cuenta?</h3>
+                        <p>Regístrate para que puedas iniciar sesión</p>
+                        <button id="btn__registrarse">Regístrarse</button>
+                    </div>
+                </div>
+
+                <!--Formulario de Login y registro-->
+                <div class="contenedor__login-register">
+                    <!--Login-->
+                    <form action="" class="formulario__login" id="formLogin">
+                        <h2>Iniciar Sesión</h2>
+                        <input type="email" placeholder="Correo Electronico" id="mailInputLogin" required>
+                        <input type="password" placeholder="Contraseña" id="passInputLogin" required>
+                        <button type="submit">Ingresar</button>
+                    </form>
+
+                    <!--Register-->
+                    <form action="" class="formulario__register" id="formRegister">
+                        <h2>Regístrarse</h2>
+                        <input type="name" placeholder="Nombre completo" id="nameInput" required>
+                        <input type="email" placeholder="Correo Electronico" id="mailInputRegister" required>
+                        <input type="user" placeholder="Usuario" id="userInputRegister" required>
+                        <input type="password" placeholder="Contraseña" id="passInputRegister" required>
+                        <button type="submit">Regístrarse</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer-login" class="footer">
+            <div class="group-1">
+             <div class="box-1">
+               <figure>
+                 <a href="#">
+                   <img src="../img/logos/Logo fondo negro.png" alt="Logo de CafecitoBreak">
+                 </a>
+               </figure>
+             </div>
+             <div class="box-2">
+              <h2>TE ESPERAMOS</h2>
+              <p>“CafecitoBreak: ¡Un break con sabor a café!”</p>
+              <p>Montevideo, Uruguay. Emilio Raña 2517.</p>
+             </div>
+             <div class="box-3">
+               <h2>SIGUENOS</h2>
+               <div class="red-Social">
+                 <a target="_blank" href="https://www.facebook.com/jorge.colinamachado?mibextid=ZbWKwL" class="facebook"><img src="../img/logos/face.jpg" class="fa fa-facebook"></img></a>
+                 <a target="_blank" href="https://instagram.com/iamjorgec_?igshid=ZGUzMzM3NWJiOQ==" class="instagram"><img src="../img/logos/insta.jpg" class="fa fa-instagram"></img></a>
+                 <a target="_blank" href="https://twitter.com/UnJorgeCurioso_" class="twitter"><img src="../img/logos/twitter.jpg" class="fa fa-twitter"></img></a>
+               </div>
+             </div>
+            </div>  
+             <div class="group-2">
+               <small>&copy; 2023 <b>CafecitoBreak</b> -  Todos los Derechos Reservados.</small>
+             </div>
+          </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="../login.js"></script>
+</body>
+</html>
