@@ -85,6 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartTotal = document.getElementById("cart-total");
   const resetButton = document.getElementById("reset-cart");
   const contadorProductos = document.getElementById("contador-productos");
+  const loginLink = document.getElementById("loginandregister");
+  const cartContainer = document.getElementById("container-cart-icon");
+  const countProducts = document.getElementById("count-products");
+  const addToCartButtons = document.querySelectorAll(".add-to-cart");
+  const isUserLogged = localStorage.getItem("UserLogged");
 
   let cartItems;
 
@@ -140,52 +145,38 @@ document.addEventListener("DOMContentLoaded", function () {
   resetButton.addEventListener("click", () => {
     resetCart();
   });
-});
-}
 
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const loginLink = document.getElementById("loginandregister");
-  const cartContainer = document.getElementById("container-cart-icon");
-  const countProducts = document.getElementById("count-products");
-
-  const isUserLogged = localStorage.getItem("UserLogged");
-
-  if (isUserLogged === "true") {
-
-    // El usuario ha iniciado sesión, mostrar el carrito
-    cartContainer.style.display = "block";
-    countProducts.style.display = "flex";
-    loginLink.style.display = "none";
-  } else {
-    // El usuario no ha iniciado sesión, mostrar el botón de inicio de sesión
-    cartContainer.style.display = "none";
-    countProducts.style.display = "none";
-    loginLink.style.display = "block";
-  }
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  const addToCartButton = document.querySelector(".add-to-cart");
+  addToCartButtons.forEach(button => (
+    button.addEventListener("click", function () {
+      if (isUserLogged === "true") {
+        // El usuario está logueado, muestra un alerta de que el producto fue añadido al carrito
+        Toastify({
+          text: "El producto fue añadido al carrito",
+          duration: 3000,
+        }).showToast();
+      } else {
+        // El usuario no está logueado, muestra un alerta que debe estar logueado para comprar
+        Toastify({
+          text: "Debes estar logueado para comprar",
+          duration: 3000,
+        }).showToast();
+      }
+    })));
   
-  addToCartButton.addEventListener("click", function () {
-    const isUserLogged = localStorage.getItem("UserLogged");
+  if (isUserLogged === "true") {
+    ShowCartButton(loginLink, cartContainer, countProducts);
+  } else {
+    ShowLoginLink(loginLink, cartContainer, countProducts);
+  }
+  function ShowCartButton(loginLink, cartContainer, countProducts){
+  cartContainer.style.display = "block";
+  countProducts.style.display = "flex";
+  loginLink.style.display = "none";
+  }
+  function ShowLoginLink(loginLink, cartContainer, countProducts){
+  cartContainer.style.display = "none";
+  countProducts.style.display = "none";
+  loginLink.style.display = "block";
+  }
 
-    if (isUserLogged === "true") {
-      // El usuario está logueado, muestra un alerta de que el producto fue añadido al carrito
-      Toastify({
-        text: "El producto fue añadido al carrito",
-        duration: 3000,
-      }).showToast();
-    } else {
-      // El usuario no está logueado, muestra un alerta que debe estar logueado para comprar
-      Toastify({
-        text: "Debes estar logueado para comprar",
-        duration: 3000,
-      }).showToast();
-    }
-  });
-});
+})}
