@@ -97,20 +97,24 @@ main .carta-container {
   justify-content: center; }
   main .carta-container .carta {
     flex: 0 0 350px;
-    margin: 30px;
+    margin: 15px 12px 10px 20px;
     text-align: center;
-    box-shadow: 0 0 0 0.10px #0d2033;
+    box-shadow: 1.5px 0px 15px -1px #0d2033;
     display: flex;
     flex-direction: column;
     align-items: center; }
     main .carta-container .carta .card-title {
       font-size: 17px;
-      font-weight: 600; }
+      font-weight: 600;
+      margin: 10px 0px 5px 0px;
+      background-color: cadetblue;
+      color: beige;
+      width: 300px; }
     main .carta-container .carta img {
       width: 100%;
       height: auto; }
     main .carta-container .carta p {
-      margin-top: 10px; }
+      margin: 10px 5px 15px 5px; }
 
 main .tienda {
   padding: 2rem;
@@ -162,7 +166,8 @@ main .shop-section {
           overflow-y: auto; }
           main .shop-section .cont-shop .row-cont .shop-col .cont-products .card {
             border: 0;
-            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+            box-shadow: 1.5px 0px 15px -7px black;
+            margin: 5px 0px 10px 0px; }
             main .shop-section .cont-shop .row-cont .shop-col .cont-products .card #card-img-shop {
               width: 20vw;
               height: 20vw;
@@ -789,31 +794,32 @@ main .contact-extra {
 /* Estilos adicionales para el botón Vaciar Carrito */
 #reset-cart {
   display: block;
-  /* Convertir el botón en un elemento en bloque */
   margin: 0 auto;
-  /* Aplicar margen automático horizontal para centrar */
   cursor: pointer;
   color: white;
-  background-color: red;
-  border-color: #0d2033;
+  background-color: rgba(255, 0, 0, 0.664);
+  border-color: black;
   padding: .300rem .50rem;
-  bottom: 5px;
-  /* Agregar un pequeño espacio entre los elementos */
+  bottom: 1px;
   position: relative;
-  border-radius: 15px 15px 15px 15px; }
+  border-radius: 10px 10px 10px 10px; }
 
 #cart-container {
   display: none;
   position: absolute;
   top: 100%;
-  left: 60%;
+  left: 54.08%;
   transform: translateX(-50%);
-  background-color: white;
-  border: 1px solid #ccc;
+  background-color: #0d2033;
+  border: 5px solid gray;
   padding: 20px;
   z-index: 100;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  text-align: center; }
+  text-align: center;
+  color: white; }
+
+#precioTotalCarrito {
+  background-color: green;
+  margin: 18px 20px 10px 20px; }
 
 /* Mostrar la ventana flotante cuando esté abierta */
 #cart-container.abierto {

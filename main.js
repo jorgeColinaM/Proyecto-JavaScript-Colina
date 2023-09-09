@@ -29,8 +29,8 @@ function HamburguerMenuAddEventListeners() {
 
 // TERMINA MENÚ HAMBURGUESA
 
-
  
+
 // EMPIEZA FUNCION PARA CARRITO DE COMPRAS, VENTANA FLOTANTE CON CARRITO Y PRODUCTOS
 
 
@@ -61,25 +61,21 @@ function CartMenuAddEventListeners() {
 function AddProductAddEventListeners() {
 
 document.addEventListener("DOMContentLoaded", function () {
-  const products = [
-    { name: "Capuccino", price: 2 },
-    { name: "Espresso", price: 1.5 },
-    { name: "Waffles", price: 5 },
-    { name: "Latte", price: 2 },
-    { name: "Medialuna", price: 4 },
-    { name: "Tiramisu", price: 6 },
-    { name: "Capuccino frío", price: 2 },
-    { name: "Carrot cake", price: 2 },
-    { name: "Torta de Chocolate", price: 5 },
-    { name: "Torta de chocomaní", price: 6 },
-    { name: "Croissant", price: 2.5 },
-    { name: "Brownie con fresas", price: 4 },
-    { name: "Pancakes canela y banana", price: 3 },
-    { name: "Chocolate caliente", price: 2.5 },
-    { name: "Sinfonia", price: 5 },
-    { name: "Pancakes con frutos", price: 4 },
-    // aquí puedo agregar más productos...
-];
+
+fetch("./products.json")
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
+        const products = data.products;
+
+        const addButtons = document.querySelectorAll(".add-to-cart");
+        addButtons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                addToCart(products[index]);
+            });
+        });
+    });
 
   const cartList = document.getElementById("cart-list");
   const cartTotal = document.getElementById("cart-total");
@@ -134,13 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("carrito", cartItems);
     updateCart();
   }
-
-  const addButtons = document.querySelectorAll(".add-to-cart");
-  addButtons.forEach((button, index) => {
-    button.addEventListener("click", () => {
-      addToCart(products[index]);
-    });
-  });
 
   resetButton.addEventListener("click", () => {
     resetCart();
