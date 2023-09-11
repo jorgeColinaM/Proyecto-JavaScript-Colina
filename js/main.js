@@ -6,10 +6,10 @@ AddProductAddEventListeners();
 // MENÚ HAMBURGUESA
 
 function HamburguerMenuAddEventListeners() {
-    var botonMenuAbrir = document.getElementById("boton-menu-abrir");
-    var botonMenuCerrar = document.getElementById("boton-menu-cerrar");
-    var menu = document.getElementById("nav");
-    var fondomenu = document.getElementById("fondo-menu-desplegable");
+    const botonMenuAbrir = document.getElementById("boton-menu-abrir");
+    const botonMenuCerrar = document.getElementById("boton-menu-cerrar");
+    const menu = document.getElementById("nav");
+    const fondomenu = document.getElementById("fondo-menu-desplegable");
     
     botonMenuAbrir.addEventListener("click", function () {
       menu.classList.add("abierto");
@@ -35,8 +35,8 @@ function HamburguerMenuAddEventListeners() {
 
 
 function CartMenuAddEventListeners() {
-  var botonMenuCarritoAbrir = document.getElementById("boton-menu-carrito");
-  var cartContent = document.getElementById("cart-container");
+  const botonMenuCarritoAbrir = document.getElementById("boton-menu-carrito");
+  const cartContent = document.getElementById("cart-container");
 
   botonMenuCarritoAbrir.addEventListener("click", function () {
     // Cambiar la visibilidad del contenido del carrito
@@ -47,7 +47,7 @@ function CartMenuAddEventListeners() {
     }
 
     // Cambiar la visibilidad del botón "Vaciar Carrito"
-    var resetCartButton = document.getElementById("reset-cart");
+    const resetCartButton = document.getElementById("reset-cart");
     if (resetCartButton.style.display === "none" || resetCartButton.style.display === "") {
       resetCartButton.style.display = "block";
     } else {
@@ -84,8 +84,10 @@ fetch("./products.json")
   const loginLink = document.getElementById("loginandregister");
   const cartContainer = document.getElementById("container-cart-icon");
   const countProducts = document.getElementById("count-products");
+  const logoutLink = document.getElementById("logoutButton")
   const addToCartButtons = document.querySelectorAll(".add-to-cart");
   const isUserLogged = localStorage.getItem("UserLogged");
+  const buyButton = document.getElementById("buy-cart")
 
   let cartItems;
 
@@ -134,38 +136,65 @@ fetch("./products.json")
   resetButton.addEventListener("click", () => {
     resetCart();
   });
+  buyButton.addEventListener("click", () => {
+    Toastify({
+      text: "Su compra ha sido exitosa",
+      duration: 3000,
+    }).showToast()
+    resetCart();
+
+  });
 
   addToCartButtons.forEach(button => (
     button.addEventListener("click", function () {
-      if (isUserLogged === "true") {
-        // El usuario está logueado, muestra un alerta de que el producto fue añadido al carrito
-        Toastify({
+       (isUserLogged === "true")        
+      // Si el usuario está logueado, muestra un alerta de que el producto fue añadido al carrito
+      
+       ? Toastify({
           text: "El producto fue añadido al carrito",
           duration: 3000,
-        }).showToast();
-      } else {
-        // El usuario no está logueado, muestra un alerta que debe estar logueado para comprar
-        Toastify({
+        }).showToast()
+      // Si el usuario no está logueado, muestra un alerta que debe estar logueado para comprar
+
+       : Toastify({
           text: "Debes estar logueado para comprar",
           duration: 3000,
         }).showToast();
-      }
+      
     })));
   
-  if (isUserLogged === "true") {
-    ShowCartButton(loginLink, cartContainer, countProducts);
-  } else {
-    ShowLoginLink(loginLink, cartContainer, countProducts);
-  }
-  function ShowCartButton(loginLink, cartContainer, countProducts){
+// Ocultar o desplegar boton ingresar, carrito de compras y contador de productos
+
+ (isUserLogged === "true") 
+ ? ShowCartButton(loginLink, cartContainer, countProducts, logoutLink)
+
+ : ShowLoginLink(loginLink, cartContainer, countProducts, logoutLink);
+  
+  function ShowCartButton(loginLink, cartContainer, countProducts, logoutLink){
   cartContainer.style.display = "block";
   countProducts.style.display = "flex";
+  logoutLink.style.display = "block";
   loginLink.style.display = "none";
+  
   }
-  function ShowLoginLink(loginLink, cartContainer, countProducts){
+  function ShowLoginLink(loginLink, cartContainer, countProducts, logoutLink){
   cartContainer.style.display = "none";
   countProducts.style.display = "none";
+  logoutLink.style.display = "none";
   loginLink.style.display = "block";
+  }
+  
+  const logout = () => {
+    localStorage.removeItem("UserLogged");
+    window.location.reload();
+    window.location.href = "./index.html";
+  }
+
+  const logoutButton = document.querySelector("#logoutButton");
+  if (logoutButton) 
+  {
+    logoutButton.addEventListener("click", logout);
   }
 
 })}
+

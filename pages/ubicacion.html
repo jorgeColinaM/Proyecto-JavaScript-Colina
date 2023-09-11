@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="shortcut icon" href="../img/logos/favicon.icon.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>CafecitoBreak| Ubicación</title>
 </head>
 
@@ -47,6 +48,32 @@
             <li class="nav-item">
               <a class="nav-link" href="./contacto.html">Contacto</a>
             </li>
+            <li id="loginandregister" class="nav-item">
+              <a class="nav-link" href="./pages/login.html">Ingresar</a>
+            </li>
+            <li id="logoutButton" class="nav-item">
+              <a class="nav-link" type="button">Cerrar sesión</a>
+            </li>
+            <div id="container-cart-icon" class="container-cart-icon">
+                
+              <button class="boton-menu-carrito" id="boton-menu-carrito"><img class="icon-cart" src="../img/CARRITO_COMPRAS.png"></img>
+              </button>
+
+                <div class="shop-col-c">
+                  <div id="cart-container">
+                    
+                    <h2>Productos</h2>
+                    <ul id="cart-list"></ul>
+                    <p id="precioTotalCarrito">Total: <span id="cart-total">$0</span></p>
+                    <button id="reset-cart">Vaciar Carrito</button>
+                  
+                  </div>
+                </div>
+              </div>
+              
+              <div id="count-products" class="count-products">
+                <span class="contador-productos" id="contador-productos">0</span>
+              </div>
         </ul>
         </div>
     </nav>
@@ -122,7 +149,8 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
-<script src="../main.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="../js/main.js"></script>
 
 </body>
 </html>
