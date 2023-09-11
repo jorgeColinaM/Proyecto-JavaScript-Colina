@@ -58,10 +58,11 @@ body .float {
   z-index: 100; }
   body .float .my-float {
     margin-top: 16px; }
-  body .float:hover {
-    text-decoration: none;
-    color: #25d366;
-    background-color: #fff; }
+
+body .float:hover {
+  text-decoration: none;
+  color: #25d366;
+  background-color: #fff; }
 
 main .cover {
   height: 400px;
@@ -81,12 +82,13 @@ main .cover {
     background-color: #0a1a2a;
     box-shadow: #0a1a2a;
     cursor: pointer; }
-    main .cover .btn:hover {
-      background-color: #0a1a2a; }
+  main .cover .btn:hover {
+    background-color: #0a1a2a; }
 
 main .blog {
   padding: 2rem;
-  margin: 4rem; }
+  margin: 4rem;
+  background-position: center; }
   main .blog h1 {
     text-align: center; }
 
@@ -117,7 +119,8 @@ main .carta-container {
 
 main .tienda {
   padding: 2rem;
-  margin: 4rem; }
+  margin: 4rem;
+  background-position: center; }
   main .tienda h1 {
     text-align: center; }
 
@@ -155,7 +158,7 @@ main .shop-section {
             margin-top: 1rem;
             cursor: pointer;
             transition: background-color 0.3s; }
-            main .shop-section .cont-shop .row-cont .shop-col-c #cart-container #reset-cart:hover {
+            main .shop-section .cont-shop .row-cont .shop-col-c #cart-container #reset-cart #reset-cart:hover {
               background-color: #ff3333; }
           main .shop-section .cont-shop .row-cont .shop-col-c #cart-container .buy-cart {
             background-color: #4c90e9;
@@ -163,6 +166,25 @@ main .shop-section {
             color: white;
             padding: 2px 8px;
             border-radius: 10px; }
+      main .shop-section .cont-shop .row-cont .shop-col {
+        max-height: 420px;
+        overflow-y: auto; }
+        main .shop-section .cont-shop .row-cont .shop-col .cont-products {
+          overflow-y: auto; }
+          main .shop-section .cont-shop .row-cont .shop-col .cont-products .card {
+            border: 0;
+            box-shadow: 1.5px 0px 15px -7px black;
+            margin: 5px 0px 10px 0px; }
+            main .shop-section .cont-shop .row-cont .shop-col .cont-products .card #card-img-shop {
+              width: 20vw;
+              height: 20vw;
+              border-radius: 10px; }
+            main .shop-section .cont-shop .row-cont .shop-col .cont-products .card .card-title {
+              font-size: 14px;
+              font-weight: 600; }
+              main .shop-section .cont-shop .row-cont .shop-col .cont-products .card .card-title span {
+                right: 8px;
+                position: absolute; }
 
 .footer {
   width: 100%;
